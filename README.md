@@ -25,11 +25,11 @@ Aqara QBKG11LM và QBKG12LM sử dụng chung phần cứng với mã LM15-LNS-P
 
 WPCZ1 sử dụng **nút nhấn bên trái** để kết nối với **phao điện**, và **nút nhấn bên phải** để **bật/tắt bơm thủ công tại chỗ**.
 - QBKG11LM:
-  - Cần **hàn thêm điện trở 4K7 (SMD 0402)** và **tụ điện 100nF (SMD 0402).**
-  - Hàn **dây kết nối phao điện** vào **nút nhấn bên trái.**
-  - Xem hướng dẫn chi tiết tại [todo: liên kết].
+  - Cần **hàn thêm điện trở R2 4K7 (SMD 0402)** và **tụ điện C2 100nF (SMD 0402).**
+  - Hàn **dây kết nối phao điện** vào **nút nhấn S1 bên trái.**
+  - Xem hình ảnhảnh chi tiết tại [todo: liên kết].
   ![QBKG11LM](./images/QBKG11LM_modify.png)
 - QBKG12LM:
   - **Tháo bỏ nút nhấn bên trái** để dùng cho phao điện.
-  - Nên **thay điện trở có sẵn (100K SMD 0402)** bằng **4K7 (SMD 0402)** nhằm tăng độ nhạy cho phao điện đặt xa.
-  - Hàn **dây kết nối phao điện** vào **nút nhấn bên trái.**
+  - Nên **thay điện trở có sẵn R2 100K (SMD 0402)** bằng **4K7 (SMD 0402)** nhằm tăng độ nhạy cho phao điện đặt xa.
+  - Hàn **dây kết nối phao điện** vào **nút nhấn S1 bên trái.**
