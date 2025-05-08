@@ -27,7 +27,7 @@ WPCZ1 sử dụng **nút nhấn bên trái** để kết nối với **phao đi�
 - QBKG11LM:
   - Cần **hàn thêm điện trở R2 4K7 (SMD 0402)** và **tụ điện C2 100nF (SMD 0402).**
   - Hàn **dây kết nối phao điện** vào **nút nhấn S1 bên trái.**
-  - Xem hình ảnhảnh chi tiết tại [todo: liên kết].
+  - Xem hình ảnh chi tiết tại [todo: liên kết].
   ![QBKG11LM](./images/QBKG11LM_modify.png)
 - QBKG12LM:
   - **Tháo bỏ nút nhấn bên trái** để dùng cho phao điện.
