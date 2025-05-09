@@ -1,6 +1,8 @@
 # 🚀 WPCZ1
 WPCZ1 (Water Pump Controller Zigbee 1) là bản mod sử dụng các công tắc Zigbee có sẵn trên thị trường để điều khiển bơm nước (dùng phao điện) trong các hộ gia đình tại Việt Nam.
 
+![wpcz1](./images/wpcz1.svg)
+
 Phiên bản đầu tiên này hỗ trợ các công tắc Aqara QBKG11LM và QBKG12LM.
 
 ## ✨ Tính năng
