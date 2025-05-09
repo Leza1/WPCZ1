@@ -31,7 +31,7 @@ WPCZ1 sử dụng **nút nhấn bên trái** để kết nối với **phao đi�
 - QBKG11LM:
   - Cần **hàn thêm điện trở R2 4K7 (SMD 0402)** và **tụ điện C2 100nF (SMD 0402).**
   - Hàn **dây kết nối phao điện** vào **nút nhấn S1 bên trái.**
-  - Xem [hình ảnh chi tiết](./QBKG11LM_modify.md).
+  - Xem [hình ảnh chi tiết](./QBKG11LM_modify.md)
   ![QBKG11LM](./images/QBKG11LM_modify.png)
 - QBKG12LM:
   - **Tháo bỏ nút nhấn bên trái** để dùng cho phao điện.
@@ -44,11 +44,13 @@ WPCZ1 sử dụng **nút nhấn bên trái** để kết nối với **phao đi�
 ### 📦 Cập nhật firmware (OTA)
 TODO:OTA
 
+###  Sử dụng
+
 ### 🚨 Trạng thái đèn LED
 | Đèn báo                      | Trạng thái thiết bị                   |
 |------------------------------|---------------------------------------|
-| Đèn xanh sáng / tắt          | Bật/tắt bơm nước                      |
-| Đèn xanh nhấp nháy liên tục  | Kết nối mạng                          |
-| Đèn đỏ nhấp nháy ngắt quãng  | Thiết bị không được kết nối với mạng  |
+| Đèn xanh sáng / tắt          | Bật / tắt bơm nước                    |
+| Đèn xanh nhấp nháy liên tục  | Đang kết nối mạng                     |
+| Đèn đỏ nhấp nháy ngắt quãng  | Thiết bị không được kết nối mạng      |
 | Đèn đỏ nhấp nháy liên tục    | Báo động quá nhiệt                    |
 | Đèn cam nhấp nháy liên tục   | Báo động quá tải                      |
