@@ -3,7 +3,7 @@
   <!-- Styles -->
   <style>
     .tank-outline { fill: none; stroke: #666; stroke-width: 3; }
-    .tank-water { fill: #09C; opacity: 0.8; }
+    .tank-water { fill: #09C; }
     .base { fill: none; stroke: #888; stroke-width: 8; }
     .wire-red { fill: none; stroke: red; stroke-width: 3; }
     .wire-green { fill: none; stroke: green; stroke-width: 3; }
@@ -16,9 +16,19 @@
     .pump-label { font-family: Arial; font-size: 40px; text-anchor: middle; }
     .water-drop { fill: #09C; stroke: #000; }
     
-    @keyframes flow-water {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
+    @keyframes flow-water-vertical {
+      0% { opacity: 1; transform: translateY(0); }
+      100% { opacity: 1; transform: translateY(-20px); }
+    }
+    
+    @keyframes flow-water-vertical1 {
+      0% { opacity: 1; transform: translateY(0); }
+      100% { opacity: 1; transform: translateY(20px); }
+    }
+    
+    @keyframes flow-water-horizontal {
+      0% { opacity: 1; transform: translateX(0); }
+      100% { opacity: 1; transform: translateX(-20px); }
     }
     
     @keyframes blink-yellow {
@@ -36,18 +46,54 @@
       50% { transform: translateY(-100px); }
     }
     
-    .water-flowing { animation: flow-water 2s infinite; }
     .water-level-change { animation: water-level 15s infinite ease-in-out; }
     .float-switches { animation: float-switch-move 15s infinite ease-in-out; }
     .active-light { animation: blink-yellow 1s infinite; }
+
+    /* Water drops are only visible during the first half of the animation cycle */
+    .water-flowing-vertical { 
+      animation: flow-water-vertical 0.8s infinite linear; 
+      opacity: 0;
+    }
+    .water-flowing-vertical1 { 
+      animation: flow-water-vertical1 0.8s infinite linear; 
+      opacity: 0;
+    }
+    .water-flowing-horizontal { 
+      animation: flow-water-horizontal 0.8s infinite linear; 
+      opacity: 0;
+    }
+    
+    /* Show drops in the first ~45% of the water level cycle */
+    @keyframes show-drops {
+      0%, 45%, 100% { opacity: 1; }
+      46%, 99% { opacity: 0; }
+    }
+    
+    .drops-control {
+      animation: show-drops 15s infinite ease-in-out;
+    }
   </style>
   
   <!-- Background -->
   <rect x="0" y="0" width="630" height="600" fill="#f9f9f9"/>
+
+  <!-- Water drops with controlled visibility -->
+  <g class="drops-control">
+    <!-- Water drops -->
+    <g class="water-flowing-vertical1">
+      <circle cx="260" cy="140" r="5" class="water-drop"/>
+      <circle cx="260" cy="160" r="5" class="water-drop"/>
+      <circle cx="260" cy="180" r="5" class="water-drop"/>
+      <circle cx="260" cy="200" r="5" class="water-drop"/>
+      <circle cx="260" cy="220" r="5" class="water-drop"/>
+      <circle cx="260" cy="240" r="5" class="water-drop"/>
+    </g>
+  </g>
   
   <!-- Water tank -->
   <rect x="100" y="250" width="200" height="200" class="tank-water water-level-change"/>
-  <rect x="100" y="100" width="200" height="350" class="tank-outline" rx="10" ry="10"/>
+  <rect x="100" y="120" width="200" height="330" class="tank-outline" rx="10" ry="10"/>
 
   <rect x="420" y="480" width="100" height="100" fill="#09C" rx="10" ry="10"/>
   
@@ -64,7 +110,7 @@
   <text x="550" y="345" class="wpcz1-text">WPCZ1</text>
   
   <!-- Wires -->
-  <path d="M 250 150 V 70 H 400 V 390" class="wire-green"/>
+  <path d="M 260 150 V 80 H 400 V 390" class="wire-green"/>
   <path d="M 430 420 H 470 V 560" class="wire-green"/>
   <path d="M 160 300 H 160 V 30 H 550 V 180" class="wire-red"/>
   <path d="M 510 280 H 460 L 420 400" class="wire-red"/>
@@ -79,30 +125,48 @@
   <!-- Pump and housing -->
   <circle cx="400" cy="415" r="30" class="pump"/>
   <text x="400" y="430" class="pump-label">P</text>
-  
-  <!-- Water drops -->
-  <g class="water-flowing">
-    <circle cx="470" cy="440" r="5" class="water-drop"/>
-    <circle cx="470" cy="460" r="5" class="water-drop"/>
-    <circle cx="470" cy="480" r="5" class="water-drop"/>
-    <circle cx="400" cy="380" r="5" class="water-drop"/>
-    <circle cx="400" cy="360" r="5" class="water-drop"/>
-    <circle cx="400" cy="340" r="5" class="water-drop"/>
-    <circle cx="400" cy="320" r="5" class="water-drop"/>
-    <circle cx="400" cy="300" r="5" class="water-drop"/>
-    <circle cx="400" cy="280" r="5" class="water-drop"/>
-    <circle cx="400" cy="260" r="5" class="water-drop"/>
-    <circle cx="400" cy="240" r="5" class="water-drop"/>
-    <circle cx="400" cy="220" r="5" class="water-drop"/>
-    <circle cx="400" cy="200" r="5" class="water-drop"/>
-    <circle cx="400" cy="180" r="5" class="water-drop"/>
-    <circle cx="400" cy="160" r="5" class="water-drop"/>
-    <circle cx="400" cy="140" r="5" class="water-drop"/>
-    <circle cx="400" cy="120" r="5" class="water-drop"/>
-    <circle cx="400" cy="100" r="5" class="water-drop"/>
-    <circle cx="400" cy="80" r="5" class="water-drop"/>
+
+  <!-- Water drops with controlled visibility -->
+  <g class="drops-control">
+    <!-- Water drops -->
+    <g class="water-flowing-vertical">
+      <circle cx="470" cy="440" r="5" class="water-drop"/>
+      <circle cx="470" cy="460" r="5" class="water-drop"/>
+      <circle cx="470" cy="480" r="5" class="water-drop"/>
+      <circle cx="400" cy="380" r="5" class="water-drop"/>
+      <circle cx="400" cy="360" r="5" class="water-drop"/>
+      <circle cx="400" cy="340" r="5" class="water-drop"/>
+      <circle cx="400" cy="320" r="5" class="water-drop"/>
+      <circle cx="400" cy="300" r="5" class="water-drop"/>
+      <circle cx="400" cy="280" r="5" class="water-drop"/>
+      <circle cx="400" cy="260" r="5" class="water-drop"/>
+      <circle cx="400" cy="240" r="5" class="water-drop"/>
+      <circle cx="400" cy="220" r="5" class="water-drop"/>
+      <circle cx="400" cy="200" r="5" class="water-drop"/>
+      <circle cx="400" cy="180" r="5" class="water-drop"/>
+      <circle cx="400" cy="160" r="5" class="water-drop"/>
+      <circle cx="400" cy="140" r="5" class="water-drop"/>
+      <circle cx="400" cy="120" r="5" class="water-drop"/>
+      <circle cx="400" cy="100" r="5" class="water-drop"/>
+    </g>
+    <g class="water-flowing-horizontal">
+      <circle cx="450" cy="420" r="5" class="water-drop"/>
+      <circle cx="470" cy="420" r="5" class="water-drop"/>
+      <circle cx="400" cy="80" r="5" class="water-drop"/>
+      <circle cx="380" cy="80" r="5" class="water-drop"/>
+      <circle cx="360" cy="80" r="5" class="water-drop"/>
+      <circle cx="340" cy="80" r="5" class="water-drop"/>
+      <circle cx="320" cy="80" r="5" class="water-drop"/>
+      <circle cx="300" cy="80" r="5" class="water-drop"/>
+      <circle cx="280" cy="80" r="5" class="water-drop"/>
+    </g>
+    <g class="water-flowing-vertical1">
+      <circle cx="260" cy="80" r="5" class="water-drop"/>
+      <circle cx="260" cy="100" r="5" class="water-drop"/>
+      <circle cx="260" cy="120" r="5" class="water-drop"/>
+    </g>
   </g>
   
   <!-- Status indicator -->
-  <circle cx="550" cy="200" r="10" fill="yellow" class="active-light"/>
+  <circle cx="550" cy="200" r="10" fill="#FFCC00" class="active-light"/>
 </svg>

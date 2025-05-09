@@ -27,24 +27,24 @@ Aqara QBKG11LM và QBKG12LM dùng chung phần cứng với mã LM15-LNS-PA-A-T0
 - QBKG11LM: Có một nút nhấn điều khiển một ngõ ra rơ le.
 - QBKG12LM: Được hàn thêm linh kiện để mở rộng thành hai nút nhấn, điều khiển hai ngõ ra rơ le.
 
-WPCZ1 sử dụng **nút nhấn bên trái** để kết nối với **phao điện**, và **nút nhấn bên phải** để **bật/tắt bơm thủ công tại chỗ**.
+✳️ WPCZ1 sử dụng **nút nhấn bên trái** để kết nối với **phao điện**, và **nút nhấn bên phải** để **bật/tắt bơm thủ công tại chỗ**.
 - QBKG11LM:
   - Cần **hàn thêm điện trở R2 4K7 (SMD 0402)** và **tụ điện C2 100nF (SMD 0402).**
   - Hàn **dây kết nối phao điện** vào **nút nhấn S1 bên trái.**
-  - Xem [hình ảnh chi tiết](./QBKG11LM_modify.md)
+  - Xem [hình ảnh chi tiết](QBKG11LM_modify.md)
   ![QBKG11LM](./images/QBKG11LM_modify.png)
 - QBKG12LM:
   - **Tháo bỏ nút nhấn bên trái** để dùng cho phao điện.
   - Nên **thay điện trở có sẵn R2 100K (SMD 0402)** bằng **4K7 (SMD 0402)** nhằm tăng độ nhạy cho phao điện đặt xa.
   - Hàn **dây kết nối phao điện** vào **nút nhấn S1 bên trái.**
 
-### 🔌 Kết nối dây
+### 🔌 Đấu nối dây điện
 ![Wiring Connection](./images/Wiring-connection.png)
 
 ### 📦 Cập nhật firmware (OTA)
 TODO:OTA
 
-###  Sử dụng
+### 📖 Sử dụng
 
 ### 🚨 Trạng thái đèn LED
 | Đèn báo                      | Trạng thái thiết bị                   |
@@ -54,3 +54,6 @@ TODO:OTA
 | Đèn đỏ nhấp nháy ngắt quãng  | Thiết bị không được kết nối mạng      |
 | Đèn đỏ nhấp nháy liên tục    | Báo động quá nhiệt                    |
 | Đèn cam nhấp nháy liên tục   | Báo động quá tải                      |
+
+## 📄 Giấy phép
+Dự án này được cấp phép theo Giấy phép MIT – xem tệp [LICENSE](LICENSE) để biết thêm chi tiết.
