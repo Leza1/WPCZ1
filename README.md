@@ -23,7 +23,7 @@ Phiên bản đầu tiên này hỗ trợ các công tắc Xiaomi Aqara QBKG11LM
 - ⚠️ Phần thao tác này **chỉ nên được thực hiện bởi người có chuyên môn về điện hoặc điện tử**. Việc lắp đặt hoặc sửa đổi sai cách có thể gây **nguy hiểm đến tính mạng**, cũng như **gây cháy nổ thiết bị.**
 - ⚠️ **Không nên tự thực hiện nếu bạn không có chuyên môn** - hãy **nhờ kỹ thuật viên chuyên nghiệp** hoặc **sử dụng thiết bị đã được mod sẵn** để đảm bảo an toàn.
 
-Aqara QBKG11LM và QBKG12LM sử dụng chung phần cứng với mã LM15-LNS-PA-A-T0.
+Aqara QBKG11LM và QBKG12LM dùng chung phần cứng với mã LM15-LNS-PA-A-T0.
 - QBKG11LM: Có một nút nhấn điều khiển một ngõ ra rơ le.
 - QBKG12LM: Được hàn thêm linh kiện để mở rộng thành hai nút nhấn, điều khiển hai ngõ ra rơ le.
 
@@ -31,9 +31,21 @@ WPCZ1 sử dụng **nút nhấn bên trái** để kết nối với **phao đi�
 - QBKG11LM:
   - Cần **hàn thêm điện trở R2 4K7 (SMD 0402)** và **tụ điện C2 100nF (SMD 0402).**
   - Hàn **dây kết nối phao điện** vào **nút nhấn S1 bên trái.**
-  - Xem hình ảnh chi tiết tại [đây](./QBKG11LM_modify.md).
+  - Xem [hình ảnh chi tiết](./QBKG11LM_modify.md).
   ![QBKG11LM](./images/QBKG11LM_modify.png)
 - QBKG12LM:
   - **Tháo bỏ nút nhấn bên trái** để dùng cho phao điện.
   - Nên **thay điện trở có sẵn R2 100K (SMD 0402)** bằng **4K7 (SMD 0402)** nhằm tăng độ nhạy cho phao điện đặt xa.
   - Hàn **dây kết nối phao điện** vào **nút nhấn S1 bên trái.**
+
+### 📦 Cập nhật firmware (OTA)
+TODO:OTA
+
+### 🚨 Trạng thái đèn LED
+| Đèn báo                      | Trạng thái thiết bị                   |
+|------------------------------|---------------------------------------|
+| Đèn xanh sáng / tắt          | Bật/tắt bơm nước                      |
+| Đèn xanh nhấp nháy liên tục  | Kết nối mạng                          |
+| Đèn đỏ nhấp nháy ngắt quãng  | Thiết bị không được kết nối với mạng  |
+| Đèn đỏ nhấp nháy liên tục    | Báo động quá nhiệt                    |
+| Đèn cam nhấp nháy liên tục   | Báo động quá tải                      |
