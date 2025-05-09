@@ -1,12 +1,14 @@
 # 🚀 WPCZ1
-WPCZ1 (Water Pump Controller Zigbee 1) là bản mod sử dụng các công tắc Zigbee có sẵn trên thị trường để điều khiển bơm nước (dùng phao điện) trong các hộ gia đình tại Việt Nam.
+WPCZ1 (Water Pump Controller Zigbee 1) là bản mod dùng cho các công tắc Zigbee có sẵn trên thị trường để điều khiển bơm nước (sử dụng phao điện) trong các hộ gia đình tại Việt Nam.
 
-![wpcz1](./images/wpcz1.svg)
+<div align="center">
+  <img src="./images/wpcz1.svg" alt="wpcz1" width="400"/>
+</div>
 
-Phiên bản đầu tiên này hỗ trợ các công tắc Aqara QBKG11LM và QBKG12LM.
+Phiên bản đầu tiên này hỗ trợ các công tắc Xiaomi Aqara QBKG11LM và QBKG12LM.
 
 ## ✨ Tính năng
-- Giữ nguyên khả năng điều khiển bơm bằng phao điện như truyền thống.
+- Điều khiển bơm nước bằng phao điện như truyền thống, đồng thời bổ sung khả năng bật/tắt bơm thủ công thông qua nút nhấn tại chỗ.
 - Hỗ trợ điều khiển từ xa thông qua các ứng dụng nhà thông minh.
 - Hiển thị các thông số như công suất, điện áp, dòng điện, số lần bật/tắt,... giúp dễ dàng giám sát hoạt động của bơm và phát hiện các bất thường (quá tải, quá nhiệt, rò rỉ nước gây bật/tắt liên tục,...).
 - Tích hợp chức năng bảo vệ quá nhiệt (trên 55°C) và quá tải (trên 2000W).
