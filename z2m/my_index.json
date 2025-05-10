@@ -1,0 +1,22 @@
+[
+    {
+        "modelId": "lumi.ctrl_ln1",
+        "url": "WPCZ1.ota",
+        "force": true
+    },
+    {
+        "modelId": "lumi.ctrl_ln1.aq1",
+        "url": "WPCZ1.ota",
+        "force": true
+    },
+    {
+        "modelId": "lumi.ctrl_ln2",
+        "url": "WPCZ1.ota",
+        "force": true
+    },
+    {
+        "modelId": "lumi.ctrl_ln2.aq1",
+        "url": "WPCZ1.ota",
+        "force": true
+    }
+]

@@ -20,7 +20,7 @@ Phiên bản đầu tiên này hỗ trợ các công tắc Xiaomi Aqara QBKG11LM
 ## ⚙️ Hướng dẫn
 ### 🛠 Thay đổi phần cứng
 ⚠️ **Cảnh báo an toàn**
-- ⚠️ Phần thao tác này **chỉ nên được thực hiện bởi người có chuyên môn về điện hoặc điện tử**. Việc lắp đặt hoặc sửa đổi sai cách có thể gây **nguy hiểm đến tính mạng**, cũng như **gây cháy nổ thiết bị.**
+- ⚠️ Phần thao tác này **chỉ nên được thực hiện bởi người có chuyên môn về điện - điện tử**. Việc lắp đặt hoặc sửa đổi sai cách có thể gây **nguy hiểm đến tính mạng**, cũng như **gây cháy nổ thiết bị.**
 - ⚠️ **Không nên tự thực hiện nếu bạn không có chuyên môn** - hãy **nhờ kỹ thuật viên chuyên nghiệp** hoặc **sử dụng thiết bị đã được mod sẵn** để đảm bảo an toàn.
 
 Xiaomi Aqara QBKG11LM và QBKG12LM dùng chung PCB (mã LM15-LNS-PA-A-T0), chỉ khác nhau số lượng nút nhấn và rờ le bên trong.
@@ -54,7 +54,34 @@ external_converters:
 - Sau khi khởi động lại Zigbee2MQTT, **các tính năng của WPCZ1 sẽ được hiển thị và hỗ trợ đầy đủ.**
 
 ### 📦 Cập nhật firmware (OTA)
-TODO:OTA
+Firmware `WPCZ1.ota` hỗ trợ cập nhật qua OTA (Over-The-Air). Có thể dùng Zigbee2MQTT theo các bước sau:
+- **Tải firmware** [WPCZ1.ota](./ota/WPCZ1.ota) vào thư mục: `zigbee2mqtt/data` (cùng cấp với file `configuration.yaml`).
+- **Khai báo OTA** bằng cách tạo hoặc sao chép / ghi đè file [my_index.json](./z2m/my_index.json) vào thư mục: `zigbee2mqtt/data` với nội dung sau (cho QBKG11LM):
+```json
+[
+    {
+        "modelId": "lumi.ctrl_ln1.aq1",
+        "url": "WPCZ1.ota",
+        "force": true
+    }
+]
+```
+- Khai báo đường dẫn tới file `my_index.json` trong `configuration.yaml`:
+```yaml
+ota:
+  zigbee_ota_override_index_location: my_index.json
+```
+- Thiết bị sẽ xuất hiện trong trang OTA của Zigbee2MQTT
+  - Nhấp vào **"Check firmware update"** để kiểm tra bản cập nhật khả dụng.
+  - Nhấn **"Update firmware"** để bắt đầu cập nhật.
+- Hoàn tất cập nhật
+  - **Xóa thiết bị** QBKG11LM (hoặc QBKG12LM) cũ khỏi Zigbee2MQTT (nhớ chọn **"Force remove"**).
+  - **Khởi động lại Zigbee2MQTT.**
+  - Thiết bị **WPCZ1 sẽ tham gia mạng Zigbee** và hoạt động với **các tính năng mới** đã được cập nhật.
+
+**Lưu ý:**
+- Thời gian cập nhật có thể mất **10 – 20 phút**.
+- **Đặt thiết bị gần hub Zigbee** và đảm bảo **mạng ổn định** trong suốt quá trình cập nhật.
 
 ### 📖 Sử dụng
 
