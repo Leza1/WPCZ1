@@ -78,13 +78,19 @@ ota:
   - **Xóa thiết bị** QBKG11LM (hoặc QBKG12LM) cũ khỏi Zigbee2MQTT (nhớ chọn **"Force remove"**).
   - **Khởi động lại Zigbee2MQTT**, đặt chế độ **"Permit join (All)".**
   - Khởi động lại WPCZ1, **thiết bị sẽ tự động tham gia mạng Zigbee** và hoạt động với **các tính năng mới** đã được cập nhật.
-[hình ảnh chi tiết](QBKG11LM_Z2M.md)
+
+Xem [hình ảnh chi tiết](QBKG11LM_Z2M.md)
 
 **Lưu ý:**
 - Thời gian cập nhật có thể mất **10 – 20 phút**.
 - **Đặt thiết bị gần hub Zigbee** và đảm bảo **mạng ổn định** trong suốt quá trình cập nhật.
 
-### 📖 Sử dụng
+### 📖 Cách sử dụng WPCZ1
+- **Điều khiển bơm nước tự động:** Bơm sẽ **tự động bật khi phao điện kích hoạt** (mực nước thấp) và **tự động tắt khi phao ngừng kích hoạt** (mực nước cao).
+- **Điều khiển bơm thủ công:** Nhấn nút trên công tắc QBKG11LM (hoặc nút phải của QBKG12LM) để bật / tắt bơm thủ công.
+- Khi mới cập nhật firmware `WPCZ1.ota` cho QBKG11LM (hoặc QBKG12LM), thiết bị sẽ **tự động dò tìm và tham gia mạng Zigbee**. Nếu cần kết nối thủ công, thực hiện như sau:
+  - **Chưa kết nối mạng:** Nhấn giữ nút trên công tắc QBKG11LM (hoặc nút phải của QBKG12LM) **hơn 8 giây** để bắt đầu kết nối mạng Zigbee.
+  - **Đã kết nối mạng, cần reset:** Nhấn **2 lần liên tiếp (double press)** rồi **nhấn giữ hơn 8 giây** nút tương ứng để **reset thiết bị và kết nối lại mạng.**
 
 ### 🚨 Trạng thái đèn LED
 | Đèn báo                      | Trạng thái thiết bị                   |
@@ -95,5 +101,13 @@ ota:
 | Đèn đỏ nhấp nháy liên tục    | Báo động quá nhiệt                    |
 | Đèn cam nhấp nháy liên tục   | Báo động quá tải                      |
 
+## 🤝 Đóng góp
+Chúng tôi hoan nghênh mọi đóng góp! Vui lòng gửi Pull Request nếu bạn muốn đóng góp cho dự án.
+
 ## 📄 Giấy phép
 Dự án này được cấp phép theo Giấy phép MIT – xem tệp [LICENSE](LICENSE) để biết thêm chi tiết.
+
+## 📞 Contact
+Le Phuoc Thanh - lpthanh2@gmail.com
+
+Project Link: [https://github.com/Leza1/WPCZ1](https://github.com/Leza1/WPCZ1)
