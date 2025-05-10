@@ -76,8 +76,9 @@ ota:
   - Nhấn **"Update firmware"** để bắt đầu cập nhật.
 - Hoàn tất cập nhật
   - **Xóa thiết bị** QBKG11LM (hoặc QBKG12LM) cũ khỏi Zigbee2MQTT (nhớ chọn **"Force remove"**).
-  - **Khởi động lại Zigbee2MQTT.**
-  - Thiết bị **WPCZ1 sẽ tham gia mạng Zigbee** và hoạt động với **các tính năng mới** đã được cập nhật.
+  - **Khởi động lại Zigbee2MQTT**, đặt chế độ **"Permit join (All)".**
+  - Khởi động lại WPCZ1, **thiết bị sẽ tự động tham gia mạng Zigbee** và hoạt động với **các tính năng mới** đã được cập nhật.
+[hình ảnh chi tiết](QBKG11LM_Z2M.md)
 
 **Lưu ý:**
 - Thời gian cập nhật có thể mất **10 – 20 phút**.
