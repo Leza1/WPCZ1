@@ -2,7 +2,7 @@
 WPCZ1 là bản mod chuyển đổi các công tắc Zigbee có sẵn trên thị trường thành bộ điều khiển bơm nước (sử dụng phao điện) trong các hộ gia đình tại Việt Nam.
 
 <div align="center">
-  <img src="./images/wpcz1.svg" alt="wpcz1" width="400"/>
+  <img src="doc/images/wpcz1.svg" alt="wpcz1" width="400"/>
 </div>
 
 Phiên bản đầu tiên này hỗ trợ các công tắc Xiaomi Aqara QBKG11LM (công tắc đơn) và QBKG12LM (công tắc đôi), có nối dây trung tính.
@@ -15,7 +15,7 @@ Phiên bản đầu tiên này hỗ trợ các công tắc Xiaomi Aqara QBKG11LM
 - Điều khiển đóng / ngắt bơm tại điểm điện áp xấp xỉ 0V nhằm giảm hiện tượng tia lửa điện, giúp tăng tuổi thọ cho rơ le.
 
 ## 📸 Ảnh chụp màn hình
-![Screenshot](./images/screenshot1.png)
+![Screenshot](doc/images/screenshot1.png)
 
 ## ⚙️ Hướng dẫn
 ### 🛠 Thay đổi phần cứng
@@ -23,7 +23,7 @@ Phiên bản đầu tiên này hỗ trợ các công tắc Xiaomi Aqara QBKG11LM
 - ⚠️ Phần thao tác này **chỉ nên được thực hiện bởi người có chuyên môn về điện - điện tử**. Việc lắp đặt hoặc sửa đổi sai cách có thể gây **nguy hiểm đến tính mạng**, cũng như **gây cháy nổ thiết bị.**
 - ⚠️ **Không nên tự thực hiện nếu bạn không có chuyên môn** - hãy **nhờ kỹ thuật viên chuyên nghiệp** hoặc **sử dụng thiết bị đã được mod sẵn** để đảm bảo an toàn.
 
-Xiaomi Aqara QBKG11LM và QBKG12LM dùng chung PCB (mã LM15-LNS-PA-A-T0), chỉ khác nhau số lượng nút nhấn và rờ le bên trong.
+Xiaomi Aqara QBKG11LM và QBKG12LM dùng chung PCB (mã LM15-LNS-PA-A-T0), chỉ khác nhau số lượng nút nhấn và số rờ le bên trong.
 - QBKG11LM: Có một nút nhấn điều khiển một rơ le ngõ ra.
 - QBKG12LM: Được hàn thêm linh kiện để mở rộng thành hai nút nhấn, điều khiển hai rơ le ngõ ra.
 
@@ -31,21 +31,21 @@ Xiaomi Aqara QBKG11LM và QBKG12LM dùng chung PCB (mã LM15-LNS-PA-A-T0), chỉ
 - QBKG11LM:
   - Cần **hàn thêm điện trở R2 4K7 (SMD 0402)** và **tụ điện C2 100nF (SMD 0402).**
   - Hàn **dây kết nối phao điện** vào **nút nhấn S1 bên trái.**
-  - Xem [hình ảnh chi tiết](QBKG11LM_modify.md)
-  ![QBKG11LM](./images/QBKG11LM_modify.png)
+  - Xem [hình ảnh chi tiết](doc/QBKG11LM_modify.md)
+  ![QBKG11LM](doc/images/QBKG11LM_modify.png)
 - QBKG12LM:
   - **Tháo bỏ nút nhấn bên trái** để dùng cho phao điện.
   - Nên **thay điện trở có sẵn R2 100K (SMD 0402)** bằng **4K7 (SMD 0402)** nhằm tăng độ nhạy cho phao điện đặt xa.
   - Hàn **dây kết nối phao điện** vào **nút nhấn S1 bên trái.**
 
 ### 🔌 Đấu nối dây điện
-![Wiring Connection](./images/Wiring-connection.png)
+![Wiring Connection](doc/images/Wiring-connection.png)
 
 ### 🧩 Tích hợp với Zigbee2MQTT
 Khi vừa tham gia mạng, Zigbee2MQTT sẽ liệt kê **WPCZ1** là **thiết bị chưa được hỗ trợ**, và **không hiển thị bất kỳ tính năng nào.**
 
 Để tích hợp WPCZ1 vào Zigbee2MQTT, thực hiện theo các bước sau:
-- Sao chép file [wpcz1.js](./z2m/wpcz1.js) vào thư mục: `zigbee2mqtt/data/external_converters`
+- Sao chép file [wpcz1.js](z2m/wpcz1.js) vào thư mục: `zigbee2mqtt/data/external_converters`
 - Thêm cấu hình sau vào tệp `configuration.yaml`:
 ```yaml
 external_converters:
@@ -55,8 +55,8 @@ external_converters:
 
 ### 📦 Cập nhật firmware (OTA)
 Firmware `WPCZ1.ota` hỗ trợ cập nhật qua OTA (Over-The-Air). Có thể dùng Zigbee2MQTT theo các bước sau:
-- **Tải firmware** [WPCZ1.ota](./ota/WPCZ1.ota) vào thư mục: `zigbee2mqtt/data` (cùng cấp với file `configuration.yaml`).
-- **Khai báo OTA** bằng cách tạo hoặc sao chép / ghi đè file [my_index.json](./z2m/my_index.json) vào thư mục: `zigbee2mqtt/data` với nội dung sau (cho QBKG11LM):
+- **Tải firmware** [WPCZ1.ota](ota/WPCZ1.ota) vào thư mục: `zigbee2mqtt/data` (cùng cấp với file `configuration.yaml`).
+- **Khai báo OTA** bằng cách tạo hoặc sao chép / ghi đè file [my_index.json](z2m/my_index.json) vào thư mục: `zigbee2mqtt/data` với nội dung sau (cho QBKG11LM):
 ```json
 [
     {
@@ -79,7 +79,7 @@ ota:
   - **Khởi động lại Zigbee2MQTT**, đặt chế độ **"Permit join (All)".**
   - Khởi động lại WPCZ1, **thiết bị sẽ tự động tham gia mạng Zigbee** và hoạt động với **các tính năng mới** đã được cập nhật.
 
-Xem [hình ảnh chi tiết](QBKG11LM_Z2M.md)
+Xem [hình ảnh chi tiết](doc/QBKG11LM_Z2M.md)
 
 **Lưu ý:**
 - Thời gian cập nhật có thể mất **10 – 20 phút**.
