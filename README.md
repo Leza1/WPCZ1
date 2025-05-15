@@ -42,6 +42,7 @@ Xiaomi Aqara QBKG11LM và QBKG12LM dùng chung PCB (mã LM15-LNS-PA-A-T0), chỉ
 ![Wiring Connection](doc/images/Wiring-connection.png)
 
 ### 🧩 Tích hợp với Zigbee2MQTT
+![Zigbee2MQTT](images/Zigbee2MQTT.png)
 Khi vừa tham gia mạng, Zigbee2MQTT sẽ liệt kê **WPCZ1** là **thiết bị chưa được hỗ trợ**, và **không hiển thị bất kỳ tính năng nào.**
 
 Để tích hợp WPCZ1 vào Zigbee2MQTT, thực hiện theo các bước sau:
@@ -52,6 +53,17 @@ external_converters:
   - wpcz1.js
 ```
 - Sau khi khởi động lại Zigbee2MQTT, **các tính năng của WPCZ1 sẽ được hiển thị và hỗ trợ đầy đủ.**
+
+### 🧩 Tích hợp với SmartThings
+![SmartThings](images/works-with-smartthings.png)
+- Nhấp vào [Leza SmartThings Edge drivers](https://bestow-regional.api.smartthings.com/invite/1PlYvEW9D0je) để truy cập các driver.
+- **Đăng nhập** bằng tài khoản SmartThings/Samsung của bạn.
+- Nhấp vào "**Tham gia**" (Join).
+- Chờ khoảng một phút để tài khoản và hub của bạn được cấp quyền truy cập, sau đó **làm mới trang.**
+- Nhấp vào "**Cài đặt**" (Install) trên SmartThings Edge Driver mà bạn muốn cài đặt.
+
+**Lưu ý:**
+- Bạn cần có hub SmartThings hoặc hub tương thích hỗ trợ Zigbee để sử dụng thiết bị Zigbee với SmartThings.
 
 ### 📦 Cập nhật firmware (OTA)
 Firmware `WPCZ1.ota` hỗ trợ cập nhật qua OTA (Over-The-Air). Có thể dùng Zigbee2MQTT theo các bước sau:
