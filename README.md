@@ -62,6 +62,7 @@ external_converters:
 
 <div align="center">
   <img src="doc/images/works-with-smartthings.png" alt="SmartThings" width="512"/>
+  <p></p>
 </div>
 
 - Nhấp vào [Leza SmartThings Edge drivers](https://bestow-regional.api.smartthings.com/invite/1PlYvEW9D0je) để truy cập các driver.
@@ -70,11 +71,10 @@ external_converters:
 - Chờ khoảng một phút để tài khoản và hub của bạn được cấp quyền truy cập, sau đó **làm mới trang.**
 - Nhấp vào "**Install**" trên SmartThings Edge Driver mà bạn muốn cài đặt.
 
-**Lưu ý:**
-- Bạn cần hub SmartThings hoặc hub tương thích có hỗ trợ Zigbee để sử dụng thiết bị Zigbee với SmartThings.
+**Lưu ý:** Bạn cần hub SmartThings hoặc hub tương thích có hỗ trợ Zigbee để sử dụng thiết bị Zigbee với SmartThings.
 
 ### 📦 Cập nhật firmware (OTA)
-Firmware `WPCZ1.ota` hỗ trợ cập nhật qua OTA (Over-The-Air). Có thể dùng Zigbee2MQTT theo các bước sau:
+**Xiaomi Aqara QBKG11LM/QBKG12LM** và **WPCZ1** hỗ trợ cập nhật firmware qua OTA (Over-The-Air). Có thể dùng **Zigbee2MQTT** để chuyển đổi QBKG11LM/QBKG12LM thành WPCZ1 theo các bước sau:
 - **Tải firmware** [WPCZ1.ota](ota/WPCZ1.ota) vào thư mục: `zigbee2mqtt/data` (cùng cấp với file `configuration.yaml`).
 - **Khai báo OTA** bằng cách tạo hoặc sao chép / ghi đè file [my_index.json](z2m/my_index.json) vào thư mục: `zigbee2mqtt/data` với nội dung sau (cho QBKG11LM):
 ```json
@@ -91,9 +91,9 @@ Firmware `WPCZ1.ota` hỗ trợ cập nhật qua OTA (Over-The-Air). Có thể d
 ota:
   zigbee_ota_override_index_location: my_index.json
 ```
-- Thiết bị sẽ xuất hiện trong trang OTA của Zigbee2MQTT
+- **Khởi động lại Zigbee2MQTT**, vào trang **OTA**
   - Nhấp vào **"Check firmware update"** để kiểm tra bản cập nhật khả dụng.
-  - Nhấn **"Update firmware"** để bắt đầu cập nhật.
+  - Nhấn **"Update device firmware"** và **OK** để bắt đầu cập nhật.
 - Hoàn tất cập nhật
   - **Xóa thiết bị** QBKG11LM (hoặc QBKG12LM) cũ khỏi Zigbee2MQTT (nhớ chọn **"Force remove"**).
   - **Khởi động lại Zigbee2MQTT**, đặt chế độ **"Permit join (All)".**
