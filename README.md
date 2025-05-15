@@ -42,7 +42,8 @@ Xiaomi Aqara QBKG11LM và QBKG12LM dùng chung PCB (mã LM15-LNS-PA-A-T0), chỉ
 ![Wiring Connection](doc/images/Wiring-connection.png)
 
 ### 🧩 Tích hợp với Zigbee2MQTT
-![Zigbee2MQTT](images/Zigbee2MQTT.png)
+![Zigbee2MQTT](doc/images/Zigbee2MQTT.png)
+
 Khi vừa tham gia mạng, Zigbee2MQTT sẽ liệt kê **WPCZ1** là **thiết bị chưa được hỗ trợ**, và **không hiển thị bất kỳ tính năng nào.**
 
 Để tích hợp WPCZ1 vào Zigbee2MQTT, thực hiện theo các bước sau:
@@ -55,7 +56,8 @@ external_converters:
 - Sau khi khởi động lại Zigbee2MQTT, **các tính năng của WPCZ1 sẽ được hiển thị và hỗ trợ đầy đủ.**
 
 ### 🧩 Tích hợp với SmartThings
-![SmartThings](images/works-with-smartthings.png)
+![SmartThings](doc/images/works-with-smartthings.png)
+
 - Nhấp vào [Leza SmartThings Edge drivers](https://bestow-regional.api.smartthings.com/invite/1PlYvEW9D0je) để truy cập các driver.
 - **Đăng nhập** bằng tài khoản SmartThings/Samsung của bạn.
 - Nhấp vào "**Tham gia**" (Join).
