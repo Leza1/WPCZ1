@@ -92,7 +92,7 @@ ota:
   zigbee_ota_override_index_location: my_index.json
 ```
 - **Khởi động lại Zigbee2MQTT**, vào trang **OTA**
-  - Nhấp vào **"Check firmware update"** để kiểm tra bản cập nhật khả dụng.
+  - Nhấp vào **"Check for new updates"** để kiểm tra bản cập nhật khả dụng.
   - Nhấn **"Update device firmware"** và **OK** để bắt đầu cập nhật.
 - Hoàn tất cập nhật
   - **Xóa thiết bị** QBKG11LM (hoặc QBKG12LM) cũ khỏi Zigbee2MQTT (nhớ chọn **"Force remove"**).
