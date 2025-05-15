@@ -65,7 +65,7 @@ external_converters:
 - Nhấp vào "**Cài đặt**" (Install) trên SmartThings Edge Driver mà bạn muốn cài đặt.
 
 **Lưu ý:**
-- Bạn cần có hub SmartThings hoặc hub tương thích hỗ trợ Zigbee để sử dụng thiết bị Zigbee với SmartThings.
+- Bạn cần hub SmartThings hoặc hub tương thích có hỗ trợ Zigbee để sử dụng thiết bị Zigbee với SmartThings.
 
 ### 📦 Cập nhật firmware (OTA)
 Firmware `WPCZ1.ota` hỗ trợ cập nhật qua OTA (Over-The-Air). Có thể dùng Zigbee2MQTT theo các bước sau:
