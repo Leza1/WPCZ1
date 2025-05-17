@@ -15,7 +15,7 @@ Phiên bản đầu tiên này hỗ trợ các công tắc Xiaomi Aqara QBKG11LM
 - Điều khiển đóng / ngắt bơm tại điểm điện áp xấp xỉ 0V nhằm giảm hiện tượng tia lửa điện, giúp tăng tuổi thọ cho rơ le.
 
 ## 📸 Ảnh chụp màn hình
-![Screenshot](doc/images/screenshot1.png)
+![Screenshot1](doc/images/Screenshot_1.png) ![Screenshot2](doc/images/Screenshot_2.png) ![Screenshot3](doc/images/Screenshot_3.png)
 
 ## ⚙️ Hướng dẫn
 ### 🛠 Thay đổi phần cứng
@@ -40,6 +40,38 @@ Xiaomi Aqara QBKG11LM và QBKG12LM dùng chung PCB (mã LM15-LNS-PA-A-T0), chỉ
 
 ### 🔌 Đấu nối dây điện
 ![Wiring Connection](doc/images/Wiring-connection.png)
+
+### 📦 Thay đổi chương trình điều khiển (firmware)
+Bạn có thể nạp **firmware WPCZ1 vào thiết bị QBKG11LM hoặc QBKG12LM qua OTA (Over-The-Air)** bằng cách sử dụng **Zigbee2MQTT** theo các bước sau:
+- **Tải firmware** [WPCZ1.ota](ota/WPCZ1.ota) vào thư mục: `zigbee2mqtt/data` (cùng cấp với file `configuration.yaml`).
+- **Khai báo OTA** bằng cách tạo hoặc sao chép / ghi đè file [my_index.json](z2m/my_index.json) vào thư mục: `zigbee2mqtt/data` với nội dung sau (cho QBKG11LM):
+```json
+[
+    {
+        "modelId": "lumi.ctrl_ln1.aq1",
+        "url": "WPCZ1.ota",
+        "force": true
+    }
+]
+```
+- Khai báo đường dẫn tới file `my_index.json` trong `configuration.yaml`:
+```yaml
+ota:
+  zigbee_ota_override_index_location: my_index.json
+```
+- **Khởi động lại Zigbee2MQTT**, vào trang **OTA**
+  - Nhấp vào **"Check for new updates"** để kiểm tra bản cập nhật khả dụng.
+  - Nhấn **"Update device firmware"** và **OK** để bắt đầu cập nhật.
+- Hoàn tất cập nhật
+  - **Xóa thiết bị** QBKG11LM (hoặc QBKG12LM) cũ khỏi Zigbee2MQTT (nhớ chọn **"Force remove"**).
+  - **Khởi động lại Zigbee2MQTT**, đặt chế độ **"Permit join (All)".**
+  - Khởi động lại WPCZ1, **thiết bị sẽ tự động tham gia mạng Zigbee** và hoạt động với **các tính năng mới** đã được cập nhật.
+
+Xem [hình ảnh chi tiết](doc/QBKG11LM_Z2M.md)
+
+**Lưu ý:**
+- Thời gian cập nhật có thể mất **10 – 20 phút**.
+- **Đặt thiết bị gần hub Zigbee** và đảm bảo **mạng ổn định** trong suốt quá trình cập nhật.
 
 ### 🧩 Tích hợp với Zigbee2MQTT
 
@@ -73,38 +105,6 @@ external_converters:
 
 **Lưu ý:** Bạn cần hub SmartThings hoặc hub tương thích có hỗ trợ Zigbee để sử dụng thiết bị Zigbee với SmartThings.
 
-### 📦 Cập nhật firmware (OTA)
-**Xiaomi Aqara QBKG11LM/QBKG12LM** và **WPCZ1** hỗ trợ cập nhật firmware qua OTA (Over-The-Air). Có thể dùng **Zigbee2MQTT** để chuyển đổi QBKG11LM/QBKG12LM thành WPCZ1 theo các bước sau:
-- **Tải firmware** [WPCZ1.ota](ota/WPCZ1.ota) vào thư mục: `zigbee2mqtt/data` (cùng cấp với file `configuration.yaml`).
-- **Khai báo OTA** bằng cách tạo hoặc sao chép / ghi đè file [my_index.json](z2m/my_index.json) vào thư mục: `zigbee2mqtt/data` với nội dung sau (cho QBKG11LM):
-```json
-[
-    {
-        "modelId": "lumi.ctrl_ln1.aq1",
-        "url": "WPCZ1.ota",
-        "force": true
-    }
-]
-```
-- Khai báo đường dẫn tới file `my_index.json` trong `configuration.yaml`:
-```yaml
-ota:
-  zigbee_ota_override_index_location: my_index.json
-```
-- **Khởi động lại Zigbee2MQTT**, vào trang **OTA**
-  - Nhấp vào **"Check for new updates"** để kiểm tra bản cập nhật khả dụng.
-  - Nhấn **"Update device firmware"** và **OK** để bắt đầu cập nhật.
-- Hoàn tất cập nhật
-  - **Xóa thiết bị** QBKG11LM (hoặc QBKG12LM) cũ khỏi Zigbee2MQTT (nhớ chọn **"Force remove"**).
-  - **Khởi động lại Zigbee2MQTT**, đặt chế độ **"Permit join (All)".**
-  - Khởi động lại WPCZ1, **thiết bị sẽ tự động tham gia mạng Zigbee** và hoạt động với **các tính năng mới** đã được cập nhật.
-
-Xem [hình ảnh chi tiết](doc/QBKG11LM_Z2M.md)
-
-**Lưu ý:**
-- Thời gian cập nhật có thể mất **10 – 20 phút**.
-- **Đặt thiết bị gần hub Zigbee** và đảm bảo **mạng ổn định** trong suốt quá trình cập nhật.
-
 ### 📖 Cách sử dụng WPCZ1
 - **Điều khiển bơm nước tự động:** Bơm sẽ **tự động bật khi phao điện kích hoạt** (mực nước thấp) và **tự động tắt khi phao ngừng kích hoạt** (mực nước cao).
 - **Điều khiển bơm thủ công:** Nhấn nút trên công tắc QBKG11LM (hoặc nút phải của QBKG12LM) để bật / tắt bơm thủ công.
@@ -128,6 +128,6 @@ Chúng tôi hoan nghênh mọi đóng góp! Vui lòng gửi Pull Request nếu b
 Dự án này được cấp phép theo Giấy phép MIT – xem tệp [LICENSE](LICENSE) để biết thêm chi tiết.
 
 ## 📞 Contact
-Le Phuoc Thanh - lpthanh2@gmail.com
+Email: lpthanh2@gmail.com
 
 Project Link: [https://github.com/Leza1/WPCZ1](https://github.com/Leza1/WPCZ1)
