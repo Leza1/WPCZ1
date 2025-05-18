@@ -108,6 +108,7 @@ external_converters:
 ### 📖 Cách sử dụng WPCZ1
 - **Điều khiển bơm nước tự động:** Bơm sẽ **tự động bật khi phao điện kích hoạt** (mực nước thấp) và **tự động tắt khi phao ngừng kích hoạt** (mực nước cao).
 - **Điều khiển bơm thủ công:** Nhấn nút trên công tắc QBKG11LM (hoặc nút phải của QBKG12LM) để bật / tắt bơm thủ công.
+- **Điều khiển từ xa:** Bật / tắt bơm thông qua các ứng dụng nhà thông minh.
 - Khi mới cập nhật firmware `WPCZ1.ota` cho QBKG11LM (hoặc QBKG12LM), thiết bị sẽ **tự động dò tìm và tham gia mạng Zigbee**. Nếu cần kết nối thủ công, thực hiện như sau:
   - **Chưa kết nối mạng:** Nhấn giữ nút trên công tắc QBKG11LM (hoặc nút phải của QBKG12LM) **hơn 8 giây** để bắt đầu kết nối mạng Zigbee.
   - **Đã kết nối mạng, cần reset:** Nhấn **2 lần liên tiếp (double press)** rồi **nhấn giữ hơn 8 giây** nút tương ứng để **reset thiết bị và kết nối lại mạng.**
