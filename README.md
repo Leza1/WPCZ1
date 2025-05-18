@@ -128,6 +128,6 @@ Chúng tôi hoan nghênh mọi đóng góp! Vui lòng gửi Pull Request nếu b
 Dự án này được cấp phép theo Giấy phép MIT – xem tệp [LICENSE](LICENSE) để biết thêm chi tiết.
 
 ## 📞 Contact
-Email: lpthanh2@gmail.com
+Email: lpthanh@yahoo.com
 
 Project Link: [https://github.com/Leza1/WPCZ1](https://github.com/Leza1/WPCZ1)
